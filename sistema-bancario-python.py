@@ -1,6 +1,8 @@
 menu = '''
 
-###### MENU ######
+---------------------------
+---------- Menu -----------
+---------------------------
 
 [1] Depositar
 [2] Sacar
@@ -20,7 +22,9 @@ while True:
     opcao = int(input(menu))
 
     if opcao == 1:
-        print('Depósito')
+        print('---------------------------')
+        print('-------- Depósito ---------')
+        print('---------------------------')
         deposito = (float(input('Digite o valor a ser depositado: ')))
         if deposito > 0:
             saldo += deposito
@@ -30,7 +34,9 @@ while True:
             print('Valor negativo. Não foi possível efetuar o depósito')
 
     elif opcao == 2:
-        print('Saque')
+        print('---------------------------')
+        print('--------- Saque -----------')
+        print('---------------------------')
         saque = float(input('Digite o valor a ser sacado: '))
         if numero_saques < 3:
             if saque > limite:
@@ -44,9 +50,17 @@ while True:
             print(f'Limite diário de {numero_saques} saques atingido. Tente novamente amanhã')
 
     elif opcao == 3:
-        print('Extrato')
-        print(extrato)
-        print(f'Saldo atual: R$ {saldo:.2f}')
+        print('---------------------------')
+        print('--------- Extrato ---------')
+        print('---------------------------')
+        if extrato == "":
+            print("Não houve movimentações.")
+            print()
+            print(f'Saldo atual: R$ {saldo:.2f}')
+        else:
+            print(extrato)
+            print()
+            print(f'Saldo atual: R$ {saldo:.2f}')
 
     elif opcao == 0:
         print('Obrigado por utilizar o nosso sistema')
